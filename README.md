@@ -1,5 +1,5 @@
 # Wazuh Rules Updater
-Small script centered on idea to keep repository with wazuh rules in git and update it automatically by cron.
+Small script centered on idea to keep repository with [Wazuh](https://wazuh.com/) server rules in git and update it automatically by cron.
 
 Script checks main branch of gitlab repository with Wazuh rules for a changes. 
 
@@ -7,7 +7,7 @@ In case there are any changes:
 - Script starts a git synchronisation 
 - Validates rules throught Wazuh API call
 - Restarts Wazuh cluster
-- Status of update being notified to Matrix chat room
+- Status of update being notified to [Matrix](https://matrix.org/) chat room
 
 Credentials for Wazuh API and Matrix are being kept in dot-env files.
 
