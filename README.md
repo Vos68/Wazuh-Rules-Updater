@@ -45,16 +45,22 @@ Edit credentials in files
 vi /opt/wazuh-rules-updater/.env
 vi /opt/wazuh-rules-updater/.envr
 ```
-
-Keep permissions limited as possible
-```
-chmod 100 /opt/wazuh-rules-updater/perm.sh
-```
-
 Create low privelege user account
 ```
 adduser --disabled-password --shell /bin/bash --gecos "wazuh-rules-updater" wazuh-rules-updater
 ```
+
+Keep permissions limited as possible
+```
+chmod 400 /opt/wazuh-rules-updater/send_to_matrix.py
+chmod 500 /opt/wazuh-rules-updater/wazuh-rules-updater.sh
+chown -R wazuh-rules-updater /opt/wazuh-rules-updater/.*
+chown -R wazuh-rules-updater /opt/wazuh-rules-updater/*
+chown root:root /opt/wazuh-rules-updater/perm.sh
+chmod 100 /opt/wazuh-rules-updater/perm.sh
+```
+
+
 
 Sudoers modification required to run a fix for permissions. 
 ```
